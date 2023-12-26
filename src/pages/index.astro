@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from 'astro:assets';
+
+const pageTitle = "Inicio"
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <Image 
+  style={{'maxWidth': '50rem', 'margin': 'auto'}} 
+  src="https://www.dropbox.com/scl/fi/7j5ghx9d3f0jin4i2enfk/_574f0337-3d00-45ea-9575-59c013cb3453.jpeg?rlkey=0zf10z4394nwtqz7picfh00l8&raw=1" 
+  width=500 
+  height=600  
+  alt="banner" 
+  />
+</BaseLayout> 

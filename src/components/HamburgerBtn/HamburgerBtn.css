@@ -1,0 +1,9 @@
+.hamburger {
+  cursor: pointer;
+}
+
+@media screen and (width > 32rem) {
+  .hamburger {
+    display: none;
+  }  
+}

@@ -1,0 +1,23 @@
+---
+import './MyDescription.css'
+import { Image } from 'astro:assets'
+---
+
+<aside class="description">
+  <Image
+    class="description-avatar"
+    src='https://www.dropbox.com/s/trpp2imsxfc7mlz/meme_gato.jpg?raw=1'
+    width='200'
+    height='300'
+    alt='my avatar' 
+  />
+  <div class="nes-container is-dark with-title">
+    <h1 class="title">Wanderlee Max</h1>
+    <p class="description-text">
+      Programador FronEnd, en constante aprendizaje, mis lenguajes favoritos son typescript y C#.
+    </p>
+    <p class="description-text">
+      Este es mi primer acercamiento a Astro y la arquitectura island.
+    </p>
+  </div>
+</aside>

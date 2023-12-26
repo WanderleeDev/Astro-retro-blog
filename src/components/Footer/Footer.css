@@ -1,0 +1,22 @@
+.icon-list {
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: 1rem;
+}
+
+.icon-item {
+  transition: transform .1s linear;
+  &:hover {
+    transform: scale(.9);
+  }
+
+  &:active {
+    transform: scale(1.1);
+  }
+}
+
+.author {
+  padding-block: 1rem;
+  text-align: center;
+}

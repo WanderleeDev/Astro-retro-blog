@@ -1,0 +1,26 @@
+---
+import './SimpleList.css'
+interface Props {
+  title?: string,
+  listContent: string[]
+}
+
+const { listContent, title } = Astro.props
+---
+
+<article>
+  { !!title && <h3>{title}</h3> }
+
+  <div class="lists">
+    <ul class="nes-list is-circle">
+      {listContent.map(content => (
+        <li class="list-item">
+          <i class="nes-icon coin is-medium"></i>
+          <span>
+            {content}
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</article>

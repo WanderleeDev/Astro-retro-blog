@@ -1,0 +1,24 @@
+---
+import "./Navigation.css"
+import HamburgerBtn from "../HamburgerBtn/HamburgerBtn.astro"
+---
+
+<header>
+  <HamburgerBtn />
+  <nav class="nav" id="navbar">
+    <ul class="nav-link">
+      <li>
+        <a class="nes-text is-success" href="/">Inicio</a>
+      </li>
+      <li>
+        <a class="nes-text is-warning" href="/blog/">Blog</a>
+      </li>
+      <li>
+        <a class="nes-text is-success" href="/tags/">Categorias</a>
+      </li>
+      <li>
+        <a class="nes-text is-warning" href="/about/">Sobre mi</a>
+      </li>
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,26 @@
+.description {
+  display: grid;
+  gap: 2rem;
+
+  @media screen and (width > 45rem) {
+    grid-template-columns: repeat(2 ,1fr);  
+  }
+
+  @media screen and (width > 60rem) {
+    grid-template-columns: auto 1fr;  
+  }  
+}
+
+.description-avatar {
+  max-width: 20rem;
+  height: 100%;
+  margin-inline: auto;
+
+  @media screen and (width > 45rem) {
+    margin-inline: unset;
+  }
+}
+
+.description-text {
+  text-wrap: balance ;
+}

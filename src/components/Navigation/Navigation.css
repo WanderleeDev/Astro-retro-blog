@@ -1,0 +1,22 @@
+.nav {
+  display: none;
+
+  @media screen and (width > 32rem) {
+    display: unset;
+  }
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  text-transform:  uppercase;
+  @media screen and (width > 32rem) {
+    gap: 2rem;
+  }
+}
+
+.expanded {
+  display: unset;
+}
+

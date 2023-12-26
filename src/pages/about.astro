@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro"
+import MyDescription from '../components/MyDescription/MyDescription.astro'
+import SimpleList from "../components/SimpleList/SimpleList.astro";
+
+const pageTitle ="About me"
+const listLanguages = ['HTML','Css','JavaScript','TypeScript','Sass','TailwindCss','Angular','React']
+const titleList = 'Algunas tecnologias que uso'
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div 
+    style={{ 
+      display: 'flex', 
+      'flexDirection': 'column',
+      gap: '2rem',
+    }}
+  >
+    <MyDescription />
+    <SimpleList listContent={listLanguages} title={titleList}/>
+  </div>
+  
+</BaseLayout>

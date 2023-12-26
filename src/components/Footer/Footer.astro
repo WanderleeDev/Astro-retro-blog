@@ -1,0 +1,32 @@
+---
+import "./Footer.css"
+
+const icons = [
+'github',
+'google',
+'gmail',
+'linkedin'
+]
+---
+
+<footer>
+  <p>
+    Únete a las redes dela comunidad
+  </p>
+  <ul class="icon-list">
+    {
+      icons.map(icon => (
+        <li class="icon-item">
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <i class={`nes-icon ${icon} is-medium`}></i>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <p class="author">
+    <i class="nes-icon is-small star"></i>
+    Development by WanderleeDev
+    <i class="nes-icon is-small star"></i>
+  </p>
+</footer>
