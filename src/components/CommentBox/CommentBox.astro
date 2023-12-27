@@ -5,19 +5,50 @@ import './CommentaryBox.css'
 <div class="nes-container is-dark">
   <div class="message-list">
 
-      <section class="message -left commentBox">
-        <i class="nes-bcrikko"></i>
-        <!-- Balloon -->
-        <div class="nes-container is-rounded is-dark with-title">
-          <p class="title commentBox-user">
-            XamPeru33
-          </p>
-          <p class="commentBox-text">
-            Este es un comentario de prueba.
-          </p>
-        </div>
-      </section>
+    <form class="nes-container is-rounded is-dark formComment">
+      <textarea
+        id="inputComment" 
+        class="formComment-text" 
+        name="inputComment"
+        placeholder="Escribe tu comentario ..."
+      >
+      </textarea>
+      <button type="submit" class="nes-btn is-primary">
+        Comentar
+      </button>
+    </form>
 
-    </div>
+    <article class="message -left commentBox">
+      <i class="nes-bcrikko"></i>
+      <!-- Balloon -->
+      <div class="nes-container is-rounded is-dark with-title">
+        <h3 class="title commentBox-user">
+          XamPeru33
+        </h3>
+        <p class="commentBox-text">
+          Este es un comentario de prueba.
+        </p>
+      </div>
+    </article>
+
+    <article class="message -left commentBox">
+      <i class="nes-bcrikko"></i>
+      <!-- Balloon -->
+      <div class="nes-container is-rounded is-dark with-title">
+        <h3 class="title commentBox-user">
+          XamPeru33
+        </h3>
+        <p class="commentBox-text">
+          Este es un comentario de prueba.
+        </p>
+      </div>
+    </article>
+
   </div>
-</section>
+</div>
+
+
+<script>
+  const textArea = document.querySelector('#inputComment') as HTMLTextAreaElement;
+  textArea.value = ''
+</script>

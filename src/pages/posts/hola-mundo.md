@@ -4,13 +4,11 @@ date: 2023-12-26
 title: 'Bienvenido a Mi Blog de Juegos Retro'
 color: '#EDFEF6'
 author: 'Wanderlee Max'
-image: 
-  url: ''
-  alt: banner
-tags: ['astro', 'blog retro', 'NES CSS']
+image:
+  url: 'https://www.dropbox.com/scl/fi/flhvilq79tkmpy98zd7pr/first-blog.webp?rlkey=vnssxpyhgwoqlnjlgckhlixyp&raw=1'
+  alt: banner mi primer blog
+tags: ['blog retro']
 description: 'Revive la nostalgia de los juegos clásicos.'
-file: /home/wanderlee/Escritorio/retro-astro/src/pages/posts/hola-mundo.md
-url: /posts/hola-mundo
 ---
 
 ¡Hola amantes de los juegos retro! Estamos emocionados de darte la bienvenida a nuestro rincón virtual, donde la nostalgia y la diversión se encuentran. En [Nombre de tu Blog], nos apasiona explorar y celebrar la era dorada de los videojuegos.

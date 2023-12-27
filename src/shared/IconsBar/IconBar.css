@@ -1,0 +1,22 @@
+.icons {
+  @media screen and (width > 40rem) {
+    grid-column: 1/end;
+    align-self: flex-end;
+  }
+
+  @media screen and (width > 50rem) {
+    grid-area: icons;
+    flex-direction: column;
+    gap: .2rem;
+  }
+}
+
+.icons-img {
+  perspective: 500px;
+  transform: skew(-10deg) rotate(25deg);
+  transition: .2s linear transform;
+}
+
+.icons-img:hover {
+  transform: skew(-10deg);
+}

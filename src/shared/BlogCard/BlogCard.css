@@ -1,0 +1,55 @@
+.card {
+  max-width: 55rem;
+  display: grid;
+  gap: .5rem;
+  text-decoration: none;
+  @media screen and (width > 40rem) {
+    grid-template-columns: 10rem 1fr;
+    gap: 2rem;
+  }
+}
+
+.card:hover img {
+  transition: .2s transform linear;
+  transform: scale(1.3);
+  filter: grayscale(0);
+}
+
+.card-wrapper {
+  max-width: 10rem;
+  overflow: hidden;
+  transition: .2s transform linear ;
+}
+
+.card-img {
+  height: 100%;
+  transition: .2s transform linear, .2s filter linear;
+  filter: grayscale(1);
+}
+
+.card-content {
+  @media screen and (width > 40rem) {
+    display: grid;
+  }
+  @media screen and (width > 50rem) {
+    grid-template-areas:
+      "title icons" 
+      "content icons" ;
+      column-gap: 2rem;
+  }
+}
+
+.card-title {
+  color: #007bff;
+  @media screen and (width > 50rem) {
+    grid-area: title;
+  }
+}
+
+.card-description {
+  font-size: .7rem;
+  line-height: 2;
+  @media screen and (width > 50rem) {
+    grid-area: content;
+  }
+}

@@ -1,3 +1,9 @@
+.message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
 .commentBox {
   display: flex;
   gap: 1rem;
@@ -12,4 +18,26 @@
   font-size: 1.1rem;
   font-weight: 900;
   letter-spacing: .1rem;
+  color: #F7D51D !important;
+}
+
+.formComment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.formComment-text {
+  width: 100%;
+  min-height: 5rem;
+  resize: none;
+}
+
+.formComment-text:focus {
+  border: none;
+  outline: none;
+}
+
+.nes-bcrikko {
+  transform: scale(.7);
 }
