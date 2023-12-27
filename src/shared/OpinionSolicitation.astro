@@ -1,0 +1,81 @@
+---
+import ChillCat from './ChillCat.astro'
+---
+
+<div class="message-list">
+  <section class="message -left nes-subContainer">
+    <div class="nes-img">
+      <ChillCat />
+    </div>
+    <!-- Balloon -->
+    <div class="nes-balloon from-left">
+      <p>¡Hola denuevo!</p>
+    </div>
+  </section>
+
+  <section class="message -right nes-subContainer">
+    <!-- Balloon -->
+    <div class="nes-balloon from-right">
+      <p>¿Qué te parecio este pequeño articulo?</p>
+    </div>
+    <div class="nes-img">
+      <ChillCat />
+    </div>
+  </section>
+
+  <section class="message -left nes-subContainer">
+    <div class="nes-img">
+      <ChillCat />
+    </div>
+    <!-- Balloon -->
+    <div class="nes-balloon from-left">
+      <p>
+        Seria de gran ayuda un comentario y tu valoración
+        <i class="nes-icon is-small star"></i>
+      </p>
+    </div>
+  </section>
+</div>
+
+<style>
+  .message-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    color: #000;
+    margin-block: 4rem;
+  }
+
+  .nes-subContainer {
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    animation: fadeInUp both;
+    view-timeline-name: --chillCat;
+    view-timeline-axis: block;
+    animation-timeline: --chillCat;
+    animation-range: entry 10% cover 20%;
+    perspective: 600px;
+  }
+  
+  .nes-img {
+    widows: 2rem;
+    height: 2rem;
+    transform: translateY(3rem);
+
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(10rem) scalex(.5) ;
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0rem) scalex(1) skewY(5deg) ;
+      opacity: 1;
+  }
+}
+
+.fadeInUp-animation {
+}
+</style>

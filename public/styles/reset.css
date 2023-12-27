@@ -102,8 +102,8 @@ blockquote:before, blockquote:after, q:before, q:after {
   color: var(--blanco);
 }
 ::selection {
-  background-color: var(--negro);
-  color: var(--blanco);
+  background-color: #674583;
+  color: #ececec;
 }
 
 /* Nivelamos problemas de tipografías y colocación de formularios */

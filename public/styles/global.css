@@ -1,9 +1,11 @@
+/* fonts */
 @font-face {
   font-family: "Press Start 2P";
   src: url("/public/fonts/Press_Start_2P/PressStart2P-Regular.ttf") 
       format("truetype");
 }
 
+/* Base */
 body {
   position: relative;
   font-family: "Press Start 2P";

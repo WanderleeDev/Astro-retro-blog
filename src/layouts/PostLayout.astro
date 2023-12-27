@@ -1,0 +1,61 @@
+---
+//  layout
+import BaseLayout from './BaseLayout.astro'
+//  components
+import OpinionSolicitation from '../shared/OpinionSolicitation.astro'
+import Starrating from '../shared/StarRating.astro'
+import CommentBox from '../components/CommentBox/CommentBox.astro'
+
+import { Debug} from 'astro:components'
+
+const { frontmatter } = Astro.props
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+  <header>
+    <h1 class="post-title" style={{color: frontmatter.color}}>
+      {frontmatter.title}
+    </h1>
+    <p>
+      {frontmatter.description}
+    </p>
+  </header>
+
+  <div class="nes-container is-rounded is-dark ">
+    <slot />
+  </div>
+  
+  <footer class="post-footer">
+    <div>
+      <p class="data-time">
+        Publicado: 
+        <time datetime={frontmatter.date.slice(0,10)}>{frontmatter.date.slice(0,10)}</time>
+      </p>
+      <p class="">
+        Autor: {frontmatter.author}
+      </p>
+    </div>
+
+    <Starrating />
+  </footer>
+
+  <OpinionSolicitation />
+
+  <CommentBox />
+
+</BaseLayout>
+
+<style>
+  .post-title {
+    font-weight: 700;
+    font-size: clamp(1.2rem, 3vw ,2.5rem);
+  }
+
+  .post-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 2rem;
+    font-size: .7rem;
+  }
+</style>

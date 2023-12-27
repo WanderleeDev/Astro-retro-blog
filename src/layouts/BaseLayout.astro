@@ -1,15 +1,20 @@
 ---
-import "../../public/styles/reset.css"
+//  styles
+import "../../public/styles/reset.css";
 import "nes.css/css/nes.min.css";
-import { ViewTransitions } from "astro:transitions"
-import Navigation from "../components/Navigation/Navigation.astro";
-import Footer from "../components/Footer/Footer.astro"
-import BtnScrollTop from '../components/BtnScrollTop/BtnScrollTop.astro'
+import "../../public/styles/global.css";
 
+//  components
+import Navigation from "../components/Navigation/Navigation.astro";
+import Footer from "../components/Footer/Footer.astro";
+import BtnScrollTop from "../shared/BtnScrollTop.astro";
+
+//  utilities
+import { ViewTransitions } from "astro:transitions";
 const { pageTitle } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" transition:animate={"slide"}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -19,16 +24,25 @@ const { pageTitle } = Astro.props;
     <ViewTransitions />
   </head>
   <body>
-		<Navigation />
+    <Navigation />
 
-    <main style={{minHeight: '100dvh'}}>
+    <main class="main-container">
       <slot />
-		</main>
+    </main>
 
-    <BtnScrollTop transition:persist/>
-		<Footer />
-    <link rel="stylesheet" href="/public/styles/global.css" />
+    <BtnScrollTop />
+
+    <Footer />
+    
     <script src="../scripts/hamburgerBtn.ts"></script>
-    <script  src="../scripts/btnScrollTop.ts"></script>
   </body>
 </html>
+
+<style>
+  .main-container {
+    min-height: 100dvh;
+    display: flex;
+    flex-flow: wrap column;
+    gap: 2rem;
+  }
+</style>
