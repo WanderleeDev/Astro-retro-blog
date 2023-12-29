@@ -1,46 +1,46 @@
 ---
-import './BlogCard.css'
-import { Image } from 'astro:assets'
-import IconsBar from '../IconsBar/IconBar.astro'
+import "./BlogCard.css";
+import { Image } from "astro:assets";
+import IconsBar from "../IconsBar/IconBar.astro";
 
 interface Props {
-  image: string,
-  title: string,
-  description: string
-  url: string
-  color: string
+  image: string;
+  title: string;
+  description: string;
+  url: string;
+  color: string;
 }
 
 const { description, image, title, url, color } = Astro.props;
 ---
 
-<a 
+<a
+  aria-label="ver elcontenido del blog"
+  title="ver elcontenido del blog"
   class="nes-container is-dark card"
-  style={{textDecoration: 'none'}}
-  href={ url } 
+  style={{ textDecoration: "none" }}
+  href={url}
   rel="noopener noreferrer"
 >
+  <div class="card-wrapper">
+    <Image
+      class="card-img"
+      src={image}
+      width="150"
+      height="150"
+      alt="portada de blog"
+    />
+  </div>
 
-<div class="card-wrapper">
-  <Image
-    class="card-img"
-    src={image} 
-    width='150' 
-    height='150' 
-    alt="portada de blog"
-  />
-</div>
+  <div class="card-content">
+    <h2 class="card-title">
+      {title}
+    </h2>
 
-<div class="card-content">
-  <h2 class="card-title">
-    { title }
-  </h2>
+    <p class="card-description">
+      {description.slice(0, 76)} ...
+    </p>
 
-  <p class="card-description">
-    { description }
-  </p>
-
-  <IconsBar />
-</div>
-
+    <IconsBar />
+  </div>
 </a>

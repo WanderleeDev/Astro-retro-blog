@@ -1,0 +1,26 @@
+---
+import './FooterPost.css'
+//  components
+import StarRating from '../../shared/StarRating.astro'
+
+interface Props {
+  date: string,
+  author: string
+}
+
+const { author, date } = Astro.props
+---
+
+<footer class="post-footer">
+  <div>
+    <p class="data-time">
+      Publicado: 
+      <time datetime={date.slice(0,10)}>{date.slice(0,10)}</time>
+    </p>
+    <p class="">
+      Autor: {author}
+    </p>
+  </div>
+
+  <StarRating />
+</footer>

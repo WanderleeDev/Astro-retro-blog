@@ -1,5 +1,6 @@
 .card {
   max-width: 55rem;
+  min-height: 10rem;
   display: grid;
   gap: .5rem;
   text-decoration: none;
@@ -49,6 +50,8 @@
 .card-description {
   font-size: .7rem;
   line-height: 2;
+  height: 4rem;
+  /* overflow-y: auto; */
   @media screen and (width > 50rem) {
     grid-area: content;
   }

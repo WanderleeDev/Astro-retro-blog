@@ -3,6 +3,7 @@
 import "../../public/styles/reset.css";
 import "nes.css/css/nes.min.css";
 import "../../public/styles/global.css";
+// import "../../public/styles/utilities.css";
 
 //  components
 import Navigation from "../components/Navigation/Navigation.astro";
@@ -23,7 +24,7 @@ const { pageTitle } = Astro.props;
     <title>{pageTitle}</title>
     <ViewTransitions />
   </head>
-  <body>
+  <body style={{position: 'relative'}}>
     <Navigation />
 
     <main class="main-container">

@@ -1,0 +1,7 @@
+.post-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 2rem;
+  font-size: .7rem;
+}

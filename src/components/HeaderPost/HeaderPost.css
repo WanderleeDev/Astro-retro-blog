@@ -1,0 +1,16 @@
+.subContainer {
+  display: grid;
+  justify-items: center;
+  @media screen and (width > 60rem) {
+    align-items: center;
+    grid-template-columns: 1fr 2fr;
+    justify-content: space-between;
+  }
+}
+
+.img-wrapper{
+  max-width: 40rem;
+  @media screen and (width > 60rem) {
+    justify-self: end;
+  }
+}

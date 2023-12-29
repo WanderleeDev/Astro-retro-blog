@@ -1,17 +1,17 @@
 ---
 layout: '../../layouts/PostLayout.astro'
 date: 2023-12-27
-title: 'Un Clásico del Shoot 'em Up'
+title: "Un Clásico del Shoot 'em Up"
 color: '#EDFEF6'
 author: 'Wanderlee Max'
 image:
   url: https://www.dropbox.com/scl/fi/2bp98it8wnhsw6da5w4b6/g-darius.webp?rlkey=7hdu7ijzwipiy5rprhkpkc1wf&raw=1
   alt: juego de G-Darius
 tags: ['blog retro', 'game']
-description: 'G-Darius, de Taito (1997), redefine los shoot 'em up al permitir a los jugadores capturar enemigos y convertirlos en aliados, añadiendo profundidad estratégica.'
+description: "G-Darius, de Taito (1997), redefine los shoot 'em up al permitir a los jugadores capturar enemigos y convertirlos en aliados, añadiendo profundidad estratégica."
 ---
 
-# Explorando G-Darius: Un Clásico del Shoot 'em Up
+## Explorando G-Darius: Un Clásico del Shoot 'em Up
 
 ## Innovación en el Combate Espacial
 
@@ -28,6 +28,8 @@ description: 'G-Darius, de Taito (1997), redefine los shoot 'em up al permitir a
 ## Desafío y Reproducibilidad
 
 **Dificultad Atractiva:** Enfréntate a jefes formidables y enemigos desafiantes. La captura de enemigos agrega una dimensión estratégica, garantizando una experiencia única en cada partida.
+
+![Un cielo estrellado.](https://www.dropbox.com/scl/fi/6aak4twstjci2kuzfevzc/ezgif.com-gif-maker-3.gif?rlkey=edey81tvf01xad7wtvdfouxtg&raw=1)
 
 ## Legado Duradero
 

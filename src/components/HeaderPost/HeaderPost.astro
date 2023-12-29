@@ -1,0 +1,43 @@
+---
+import { Picture } from "astro:assets";
+import "./HeaderPost.css";
+
+interface Props {
+  color: string;
+  title: string;
+  description: string;
+  image: string;
+  alt: string;
+}
+
+const { alt, color, description, image, title } = Astro.props;
+---
+
+<header>
+  <h1 class="h1-styles" style={{ color: color }}>
+    {title}
+  </h1>
+
+  <div class="subContainer">
+    <p>
+      {description}
+    </p>
+
+    <div class="img-wrapper">
+      <Picture
+        style={{ objectFit: "contain" }}
+        src={image}
+        formats={["avif", "webp"]}
+        widths={[240, 540, 720]}
+        sizes={`
+          (max-width: 360px) 240px, 
+          (max-width: 720px) 540px, 
+          (max-width: 1600px) 720px
+        `}
+        alt={alt}
+        width="600"
+        height="600"
+      />
+    </div>
+  </div>
+</header>

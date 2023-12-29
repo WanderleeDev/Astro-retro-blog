@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { IPostProps } from '../../interfaces/IPost.interface';
+
+export const getStaticPaths = async() => {
+  const postList = await Astro.glob<IPostProps>("../posts/*.md");
+
+  const tagList = [...new Set(postList.map(post => {
+    return post.frontmatter.tags.flat()
+  }))]
+
+  return tagList.map((tag) => {
+    const filteredPosts = postList.filter((post.frontmatter.tags.includes(tag)));
+    
+    return {
+      params: { tag },
+      props: { posts: filteredPosts }
+    }
+
+  });  
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<BaseLayout pageTitle={tag}>
+  <p>Posts de la categoria {tag}</p>
+
+  <ul>
+    {
+      posts.map(p => <li>{p.frontmatter.title}</li> )
+    }
+  </ul>
+</BaseLayout> 

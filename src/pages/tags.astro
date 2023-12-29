@@ -1,7 +1,21 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
+import {Debug} from 'astro:components'
+
+const postList = await Astro.glob("./posts/*.md");
+const tagList  = [
+  ...new Set(postList.map(post => post.frontmatter.tags).flat())
+]
 const pageTitle ="Extras"
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+  <ul>
+    {
+      tagList.map(tag => 
+      <a href={tag.url} target="_blank">{tag}</a>
+      <Debug {tag}/>
+      )
+    }
+  </ul>
 </BaseLayout>
