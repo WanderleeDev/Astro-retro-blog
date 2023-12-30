@@ -1,16 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import type { IPostProps } from '../../interfaces/IPost.interface';
+import type { MarkdownInstance } from "astro"
 
 export const getStaticPaths = async() => {
-  const postList = await Astro.glob<IPostProps>("../posts/*.md");
+  const postList: MarkdownInstance<Record<string, any>>[] = await Astro.glob<IPostProps>("../posts/*.md");
 
   const tagList = [...new Set(postList.map(post => {
     return post.frontmatter.tags.flat()
   }))]
 
   return tagList.map((tag) => {
-    const filteredPosts = postList.filter((post.frontmatter.tags.includes(tag)));
+    const filteredPosts = postList.filter( post =>(post.frontmatter.tags.includes(tag)));
     
     return {
       params: { tag },

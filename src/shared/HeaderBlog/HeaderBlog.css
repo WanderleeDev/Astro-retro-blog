@@ -1,0 +1,115 @@
+:root {
+  --clr1: #cd71feaf;
+  --clr2: #a0f0f3be;
+  --clr-3: #ffffffc0;
+  --clr-4: #66aaf87c;
+
+}
+.blogHeader {
+  animation: fixHeader both;
+  view-timeline-name: --header;
+  animation-timeline: scroll();
+  animation-range: 0 200px;
+  padding-inline: 1rem;
+
+  &::before {
+    position: absolute;
+    content: "";
+    background: linear-gradient(300deg, #cd71fe9d, #a0f0f381) ;  
+    inset: 0;
+    transform: scaleY(0);
+    animation: scaleHeader both;
+    view-timeline-name: --beforeHeader;
+    animation-timeline: scroll();
+    animation-range: 100px 300px;
+  }
+}
+
+
+.blogHeader-title {
+  position: relative;
+  animation: accentColor both;
+  view-timeline-name: --title;
+  animation-timeline: scroll();
+  animation-range: 0 200px;
+}
+
+.animate {
+  position: relative;
+  backdrop-filter: 1rem;
+
+  &::before,
+  &::after{
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    content: "";
+    border-radius: 50%;
+    z-index: -1;
+    box-shadow: 50vw -45rem 0.5rem var(--clr1),
+                -50vw 20vw 0.4rem var(--clr2),
+                50vw -30vw 0.1rem var(--clr1),
+                3vw -20vw 0.2rem var(--clr-3),
+                30vw 30vw 0.1rem var(--clr2),
+                70vw 40vw 0.2rem var(--clr-4),
+                -40vw 40vw 0.2rem var(--clr-4),
+                -30vw -30vw 0.2rem var(--clr-4),
+                40vw -40vw 0.2rem var(--clr1),
+                20vw 20vw 0.2rem var(--clr-4),
+                10vw 20vw 0.3rem var(--clr-3),
+                -20vw 10vw 0.3rem var(--clr-3),
+                80vw 20vw 0.3rem var(--clr1),
+                -10vw 90vw 0.3rem var(--clr-3),
+                -40vw -20vw 0.6rem var(--clr2);
+  animation: rotate 40s linear infinite;    
+  }
+
+  &::before{
+    bottom: 20%;
+    left: 5%;
+  }
+  
+  &::after{
+    top: 5%;
+    right: 5%;
+  }
+}
+
+@keyframes rotate {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes accentColor {
+  to {
+    background: -webkit-linear-gradient(red,yellow);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@keyframes fixHeader {
+  from {
+    position: sticky;
+  }
+  to {
+    position: sticky;
+    inset: 0 0 auto 0;
+    padding-block: 2rem;
+    z-index: 10;
+    box-shadow: 0 5px 5px -3px var(--color);
+    letter-spacing: 0.2rem;
+  }
+}
+
+@keyframes scaleHeader {
+  to {
+    transform: scaleY(1);
+    border-radius: .5rem;
+    backdrop-filter: blur(.1rem);
+  }
+}

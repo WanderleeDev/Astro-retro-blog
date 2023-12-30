@@ -3,15 +3,14 @@ import type { IPostProps } from "../interfaces/IPost.interface";
 import BaseLayout from "../layouts/BaseLayout.astro";
 //  components
 import BlogCard from "../shared/BlogCard/BlogCard.astro";
+import HeaderBlog from "../shared/HeaderBlog/HeaderBlog.astro";
 
 const pageTitle = "Blog recientes";
 const postList = await Astro.glob<IPostProps>("../pages/posts/*.md");
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h1 class="title-blog">
-    {pageTitle}
-  </h1>
+  <HeaderBlog pageTitle={pageTitle}/>
 
   <ul class="postList">
     {
@@ -31,32 +30,9 @@ const postList = await Astro.glob<IPostProps>("../pages/posts/*.md");
 </BaseLayout>
 
 <style>
-  .title-blog {
-    animation: fixTitle both;
-    view-timeline-name: --title;
-    animation-timeline: scroll();
-    animation-range: 0 200px;
-  }
   .postList {
     display: flex;
     flex-flow: column-reverse wrap;
     gap: 2rem;
-  }
-
-  @keyframes fixTitle {
-    from {
-      position: sticky;
-    }
-    to {
-      --color: #100f2217;
-      position: sticky;
-      background: linear-gradient(to bottom, #eb620860, var(--color));
-      inset: 0 0 auto 0;
-      padding: 1rem;
-      z-index: 10;
-      backdrop-filter: blur(0.5rem);
-      box-shadow: 0 5px 5px -3px var(--color);
-      letter-spacing: 0.2rem;
-    }
   }
 </style>

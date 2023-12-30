@@ -1,18 +1,35 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { Image } from 'astro:assets';
+import RetroWelcome from '../components/RetroWelcome/RetroWelcome.astro';
+import Noria from '../components/Noria/Noria.astro'
 
 const pageTitle = "Inicio"
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+
+  <div class="wrapper">
+    <p class="description">
+      Blogs, curiosidades, historia y mas sobre la cultura retro.
+      <strong></strong>
+    </p>
+    <Noria />
+  </div>
   
-  <Image 
-  style={{'maxWidth': '50rem', 'margin': 'auto'}} 
-  src="https://www.dropbox.com/scl/fi/7j5ghx9d3f0jin4i2enfk/_574f0337-3d00-45ea-9575-59c013cb3453.jpeg?rlkey=0zf10z4394nwtqz7picfh00l8&raw=1" 
-  width=500 
-  height=600  
-  alt="banner" 
-  />
+
+  <RetroWelcome />
   
 </BaseLayout> 
+
+<style>
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr  1fr;
+    align-items: center;
+  }
+  .description {
+    line-height: 2;
+    text-wrap: balance;
+    font-size: clamp(1.2rem, 2vw , 1.5rem);
+  }
+</style>
