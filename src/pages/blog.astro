@@ -1,38 +1,25 @@
 ---
 import type { IPostProps } from "../interfaces/IPost.interface";
-import BaseLayout from "@layouts/BaseLayout.astro";
 //  components
+import GridLayout from "@layouts/GridLayout.astro";
 import BlogCard from "@sharedComponents/BlogCard/BlogCard.astro";
-import HeaderBlog from "@sharedComponents/HeaderBlog/HeaderBlog.astro";
 
 const pageTitle = "Blog recientes";
 const postList = await Astro.glob<IPostProps>("../pages/posts/*.md");
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <HeaderBlog pageTitle={pageTitle}/>
-
-  <ul class="postList">
-    {
-      postList.map((post) => (
-        <li>
-          <BlogCard
-            image={post.frontmatter.image.url}
-            description={post.frontmatter.description}
-            title={post.frontmatter.title}
-            url={post.url ?? "/"}
-            color={post.frontmatter.color}
-          />
-        </li>
-      ))
-    }
-  </ul>
-</BaseLayout>
-
-<style>
-  .postList {
-    display: flex;
-    flex-flow: column-reverse wrap;
-    gap: 2rem;
+<GridLayout pageTitle={pageTitle}>
+  {
+    postList.map((post) => (
+      <li>
+        <BlogCard
+          image={post.frontmatter.image.url}
+          description={post.frontmatter.description}
+          title={post.frontmatter.title}
+          url={post.url ?? "/"}
+          color={post.frontmatter.color}
+        />
+      </li>
+    ))
   }
-</style>
+</GridLayout>

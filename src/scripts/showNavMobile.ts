@@ -1,4 +1,4 @@
-export function showNavMobile () {
+export function showNavMobile (): void {
   const btn = document.querySelector('#btnHamburger');
   const navbar = document.querySelector('#navbar');
 

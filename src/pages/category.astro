@@ -1,5 +1,7 @@
 ---
+//  components
 import BaseLayout from "@layouts/BaseLayout.astro"
+import AnimatedHeader from "@sharedComponents/AnimatedHeader/AnimatedHeader.astro";
 import CategoryCard from "@sharedComponents/CategoryCard/CategoryCard.astro";
 
 
@@ -7,42 +9,39 @@ const postList = await Astro.glob("./posts/*.md");
 const tagList  = [
   ...new Set(postList.map(post => post.frontmatter.tags).flat())
 ];
-const pageTitle ="Extras"
+const pageTitle ="Categorias"
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h1 class="category">
-    Categorias
-  </h1>
+  <AnimatedHeader pageTitle={pageTitle} />
+
   <ul class="category-list">    
     {
       tagList.map(tag =>
-        <li class="category-item">
+      <li class="category-item">
           <a 
-            href={} 
+            href={`/tags/${tag}`} 
             rel="noopener noreferrer"
-            aria-label="ir a ..."
-            title="ir a ..."
+            aria-label={`ir a ${tag}`}
+            title={`ir a ${tag}`}
           >
             <CategoryCard title={tag} /> 
           </a>
         </li>
       )
     }
+
     <li 
       class="category-item"
       aria-hidden="true"
     >
       <CategoryCard title='unknown' />
     </li>
+
   </ul>
 </BaseLayout>
 
 <style>
-  .category {
-
-  }
-  
   .category-list {
     max-width: 55rem;
     display: grid;
@@ -60,5 +59,3 @@ const pageTitle ="Extras"
     color: aliceblue;
   }
 </style>
-
-<!-- <a href={`/tags/${tag}`} target="_self">{tag}</a> -->

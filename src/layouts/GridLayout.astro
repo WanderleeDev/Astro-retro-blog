@@ -1,0 +1,25 @@
+---
+import AnimatedHeader from "@sharedComponents/AnimatedHeader/AnimatedHeader.astro";
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  pageTitle: string
+}
+
+const { pageTitle } = Astro.props
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <AnimatedHeader pageTitle={pageTitle} />
+  <ul class="grid-gallery">
+    <slot/>
+  </ul>
+</BaseLayout>
+
+<style>
+  .grid-gallery {
+    display: flex;
+    flex-flow: column-reverse wrap;
+    gap: 2rem;
+  }
+</style>

@@ -1,15 +1,28 @@
 ---
-import BaseLayout from '@layouts/BaseLayout.astro';
+//  compoenents
+import GridLayout from '@layouts/GridLayout.astro';
+import BlogCard from '@sharedComponents/BlogCard/BlogCard.astro';
+//  interfaces
 import type { IPostProps } from '@interfaces/IPost.interface';
 import type { MarkdownInstance } from "astro"
 
+//  Este proceso Astro lo realiza para cada ruta dinamica a crear
 export const getStaticPaths = async() => {
+  //  recupera todos los archivos markdown
   const postList: MarkdownInstance<Record<string, any>>[] = await Astro.glob<IPostProps>("../posts/*.md");
+    
+  //  filtrar y unfica los tags de cada markdown, elimina repetidos
   const tagList = [...new Set(postList.map(post =>  post.frontmatter.tags).flat())]
+
+  return tagList.map(tag => {
+    // filtra en base a cada tag la lista de markdown y obtien solo los los ṕosts que tenga el tag   
+    const filteredPosts = postList.filter( post =>
+      post.frontmatter.tags.includes(tag)
+    );
     
-  return tagList.map((tag) => {
-    const filteredPosts = postList.filter( post =>(post.frontmatter.tags.includes(tag)));
-    
+    //  retorna un objeto q se asigna  astro:
+    //  la tag a params
+    //  props recibe la lista filtrada en base al tag
     return {
       params: { tag },
       props: { posts: filteredPosts},
@@ -17,24 +30,23 @@ export const getStaticPaths = async() => {
   });  
 }
 
+//  Obtiene de astro params y props
 const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
 
-<BaseLayout pageTitle={tag}>
-  <p>Posts de la categoria {tag}</p>
-  <ul>
-    {
-      posts.map(p => {
-        <li>
-          <figure>
-            <img src="" alt="">
-            <figcaption>
-              {p.frontmatter.title}
-            </figcaption>
-          </figure>
-        </li>
-      })
-    }
-  </ul>
-</BaseLayout> 
+<GridLayout pageTitle={tag}>
+  {
+    posts.map(post =>
+      <li>
+        <BlogCard
+          image={post.frontmatter.image.url}
+          description={post.frontmatter.description}
+          title={post.frontmatter.title}
+          url={post.url ?? "/"}
+          color={post.frontmatter.color}
+        />
+      </li>
+    ) 
+  }
+</GridLayout>

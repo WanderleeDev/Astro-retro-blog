@@ -1,12 +1,25 @@
 ---
-import "./HamburgerBtn.css"
 ---
 
 <button 
   id="btnHamburger"
   type="button" 
   class="nes-btn is-success hamburger"
-> + </button>
+> 
+  + 
+</button>
+
+<style>
+.hamburger {
+  cursor: pointer;
+}
+
+@media screen and (width > 32rem) {
+  .hamburger {
+    display: none;
+  }  
+}
+</style>
 
 <script>
   import { showNavMobile } from '@scripts/showNavMobile'
