@@ -14,25 +14,26 @@
   background-clip: text;
   background-size: 0% 100%;
   background-repeat: no-repeat;
-  animation: reveal-text linear forwards;
-  animation-timeline: view(Y);
+  animation: reveal-text ease-in forwards;
+  animation-timeline: view();
 }
 
-.intro-title {
+.intro-title span {
+  background-image: linear-gradient(360deg, red, yellow);
   max-width: 62.5rem;
   font-size: clamp(1.5rem, 5vw, 4rem);
-  animation-range-start: cover;
-  animation-range-end: contain ;
+  animation-range-start: cover 100px;
+  animation-range-end: cover  300px;
 }
 
-.intro-description {
+.intro-description span {
   display: inline;
   width: 100%;
   font-size: clamp(1.1rem, 1.8vw, 2.5rem);
   line-height: 1.7;
   text-wrap: stable;
-  animation-range-start: cover  160;
-  animation-range-end: cover  240;
+  animation-range-start: cover  170px;
+  animation-range-end: cover  500px;
 }
 
 @keyframes reveal-text {

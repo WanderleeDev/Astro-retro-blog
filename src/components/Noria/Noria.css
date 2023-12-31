@@ -6,6 +6,9 @@
   justify-items: end;
   overflow: hidden;
   min-height: 100dvh;
+  @media screen and (width <= 55rem) {
+    display: none;
+  }
 }
 .noria {
   --size: 9rem;

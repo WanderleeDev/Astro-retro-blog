@@ -1,0 +1,49 @@
+---
+import './PageIntroduction.css';
+import { banners } from '../../data/banners'
+import { generateRandomNumber } from '../../scripts/generateRandomNumber'
+
+const text = 'Perfect Pixel';
+const getBanner = () => banners[generateRandomNumber(banners.length)]
+---
+
+<div class="wrapper" style={{
+  backgroundImage: `url(${getBanner()})`
+}}>
+  <div class="sub-wrapper">
+    <p class="description">
+      Blogs, curiosidades, historia y mas sobre la cultura retro.
+    </p>
+    <strong class="description-strong">
+      {
+        text.split('').map(t => 
+          <span class="description-letter">{t}</span>
+        )
+      }
+    </strong>
+  </div>
+</div>
+
+<script>
+//  devuelve un número ramdon de 0 a 400 concatenado con ms
+const randomDelay = (): string => {
+  const delayInMilliseconds = Math.floor(Math.random() * 400);
+  return `${delayInMilliseconds}ms`;
+};
+
+//  agrega una variable css (--delay) a cada letra del nodeList
+const applyDelay = (): void => {
+  const letters: NodeListOf<HTMLSpanElement> = document.querySelectorAll('.description-letter') ?? [];
+
+  if (letters.length <= 0) return;
+
+  const listOfDelays = [...letters].map(randomDelay);
+
+  letters.forEach((letter, i) => {
+    if (letter.innerText === ' ') return;
+    letter.style.setProperty('--delay', listOfDelays[i]);
+  });
+}
+
+applyDelay();
+</script>

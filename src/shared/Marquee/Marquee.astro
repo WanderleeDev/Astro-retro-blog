@@ -1,0 +1,28 @@
+---
+import "./Marquee.css";
+import { listSvg } from "../../data/data";
+import { Image } from "astro:assets";
+
+const listMarquees = ["marquue-A", "marquee-B"];
+
+---
+
+<div class="wrapper-marquee">
+  {
+    listMarquees.map(marquee => (
+      <div class=`${marquee} marquee` >
+        {
+          listSvg.map((svg) => (
+            <Image
+              class="marquee-img"
+              src={svg.image}
+              alt={`logo ${svg.alt}`}
+              width={100}
+              height={100}
+            />
+          ))
+        }
+      </div>
+    ))
+  }
+</div>

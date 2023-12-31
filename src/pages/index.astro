@@ -1,35 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import RetroWelcome from '../components/RetroWelcome/RetroWelcome.astro';
-import Noria from '../components/Noria/Noria.astro'
+import PageIntroduction from '../components/PageIntroduction/PageIntroduction.astro'
 
 const pageTitle = "Inicio"
 ---
 
 <BaseLayout pageTitle={pageTitle}>
 
-  <div class="wrapper">
-    <p class="description">
-      Blogs, curiosidades, historia y mas sobre la cultura retro.
-      <strong></strong>
-    </p>
-    <Noria />
-  </div>
-  
-
+  <PageIntroduction client:idle/>
   <RetroWelcome />
   
 </BaseLayout> 
-
-<style>
-  .wrapper {
-    display: grid;
-    grid-template-columns: 1fr  1fr;
-    align-items: center;
-  }
-  .description {
-    line-height: 2;
-    text-wrap: balance;
-    font-size: clamp(1.2rem, 2vw , 1.5rem);
-  }
-</style>
