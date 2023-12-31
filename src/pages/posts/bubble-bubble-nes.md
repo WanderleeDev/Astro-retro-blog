@@ -7,7 +7,7 @@ author: 'Wanderlee Max'
 image:
   url: https://www.dropbox.com/scl/fi/s140ihlwgvq7vrlxoavbs/bubble-banner.jpg?rlkey=l6r3feg0azd61sqpwngrmird8&raw=1
   alt: juego de G-Darius
-tags: ['blog retro', 'game']
+tags: ['games']
 description: "G-Darius, de Taito (1997), redefine los shoot 'em up al permitir a los jugadores capturar enemigos y convertirlos en aliados, añadiendo profundidad estratégica."
 ---
 

@@ -1,6 +1,7 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro"
-import {Debug} from 'astro:components'
+import BaseLayout from "@layouts/BaseLayout.astro"
+import CategoryCard from "@sharedComponents/CategoryCard/CategoryCard.astro";
+
 
 const postList = await Astro.glob("./posts/*.md");
 const tagList  = [
@@ -10,14 +11,54 @@ const pageTitle ="Extras"
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <ul>
-    <Debug {tagList}/>
-    
+  <h1 class="category">
+    Categorias
+  </h1>
+  <ul class="category-list">    
     {
-      tagList.map(tag => 
-      <a href={`/tags/${tag}`} target="_self">{tag}</a>
-      <Debug {tag}/>
+      tagList.map(tag =>
+        <li class="category-item">
+          <a 
+            href={} 
+            rel="noopener noreferrer"
+            aria-label="ir a ..."
+            title="ir a ..."
+          >
+            <CategoryCard title={tag} /> 
+          </a>
+        </li>
       )
     }
+    <li 
+      class="category-item"
+      aria-hidden="true"
+    >
+      <CategoryCard title='unknown' />
+    </li>
   </ul>
 </BaseLayout>
+
+<style>
+  .category {
+
+  }
+  
+  .category-list {
+    max-width: 55rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    @media screen and (width <= 55rem) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (width <= 30rem) {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .category-item {
+    color: aliceblue;
+  }
+</style>
+
+<!-- <a href={`/tags/${tag}`} target="_self">{tag}</a> -->

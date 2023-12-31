@@ -12,29 +12,30 @@
   --gradient-color-2: rgba(0, 0, 0, 0.1);
   position: relative;
   background: conic-gradient(from 135deg, #2C2A4B, #100F22);
-  /* background-image: url('https://www.dropbox.com/scl/fi/b6x3eyy7srz4hxemkrrfh/food-banner.gif?rlkey=snsh8p3hhsui5rsf343bgogh8&raw=1'); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   height: calc(100dvh - 56px);
   border-radius: .5rem;
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: .5rem;
-    background: linear-gradient(90deg, 
-      var(--gradient-color-1) 0%, 
-      var(--gradient-color-2, transparent) 20%, 
-      var(--gradient-color-2, transparent) 80%, 
-      var(--gradient-color-1) 100%
-    );
-  }
 
   @media screen and (width <= 55rem) {
     grid-template-columns: 1fr; 
   }
 }
+
+.wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: .5rem;
+  background: linear-gradient(90deg, 
+    var(--gradient-color-1) 0%, 
+    var(--gradient-color-2, transparent) 20%, 
+    var(--gradient-color-2, transparent) 80%, 
+    var(--gradient-color-1) 100%
+  );
+}
+
 .sub-wrapper {
   display: flex;
   flex-flow: column wrap;

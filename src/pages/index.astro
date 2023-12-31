@@ -1,14 +1,14 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import RetroWelcome from '../components/RetroWelcome/RetroWelcome.astro';
-import PageIntroduction from '../components/PageIntroduction/PageIntroduction.astro'
+import BaseLayout from "@layouts/BaseLayout.astro";
+import RetroWelcome from '@components/RetroWelcome/RetroWelcome.astro';
+import PageIntroduction from '@components/PageIntroduction/PageIntroduction.astro'
 
 const pageTitle = "Inicio"
 ---
 
 <BaseLayout pageTitle={pageTitle}>
 
-  <PageIntroduction client:idle/>
+  <PageIntroduction />
   <RetroWelcome />
   
 </BaseLayout> 

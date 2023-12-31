@@ -1,7 +1,7 @@
 ---
 import './PageIntroduction.css';
-import { banners } from '../../data/banners'
-import { generateRandomNumber } from '../../scripts/generateRandomNumber'
+import { banners } from '@data/banners.ts'
+import { generateRandomNumber } from '@scripts/generateRandomNumber.ts'
 
 const text = 'Perfect Pixel';
 const getBanner = () => banners[generateRandomNumber(banners.length)]

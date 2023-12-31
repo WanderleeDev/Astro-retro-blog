@@ -7,7 +7,7 @@ author: 'Wanderlee Max'
 image:
   url: 'https://www.dropbox.com/scl/fi/j12gkpgmegqsnd93d11pg/superMarioBros.webp?rlkey=z4u3qfpbmahfe62te6vee60vl&raw=1'
   alt: banner super mario bros
-tags: ['blog retro', 'game']
+tags: ['games']
 description: 'Super Mario Bros, el juego que marcó el inicio de la era dorada de los videojuegos. La fórmula sencilla, pero brillante, de plataformas y aventuras catapultó a Mario al estrellato.'
 ---
 

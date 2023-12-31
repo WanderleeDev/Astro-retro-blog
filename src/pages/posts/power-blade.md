@@ -7,7 +7,7 @@ author: 'Wanderlee Max'
 image:
   url: 'https://www.dropbox.com/scl/fi/fszengqwnlwtdqbgym2bv/power-blade-banner.webp?rlkey=4znxgmb2j467n6q5wxbpyjgsd&raw=1'
   alt: banner super mario bros
-tags: ['blog retro', 'game']
+tags: ['games']
 description: 'Power Blade, 1991: Taito nos entregó una joya oculta en la NES con Power Blade. Sumérgete en un mundo cyberpunk como NOVA, un héroe armado con una boomerang-hélice.'
 ---
 

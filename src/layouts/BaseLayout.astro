@@ -3,12 +3,11 @@
 import "../../public/styles/reset.css";
 import "nes.css/css/nes.min.css";
 import "../../public/styles/global.css";
-// import "../../public/styles/utilities.css";
 
 //  components
-import Navigation from "../components/Navigation/Navigation.astro";
-import Footer from "../components/Footer/Footer.astro";
-import BtnScrollTop from "../shared/BtnScrollTop.astro";
+import Navigation from "@components/Navigation/Navigation.astro";
+import Footer from "@components/Footer/Footer.astro";
+import BtnScrollTop from "@sharedComponents/BtnScrollTop.astro";
 
 //  utilities
 import { ViewTransitions } from "astro:transitions";
@@ -35,7 +34,6 @@ const { pageTitle } = Astro.props;
 
     <Footer />
     
-    <script src="../scripts/hamburgerBtn.ts"></script>
   </body>
 </html>
 

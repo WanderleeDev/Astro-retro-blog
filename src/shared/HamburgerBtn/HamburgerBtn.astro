@@ -1,0 +1,15 @@
+---
+import "./HamburgerBtn.css"
+---
+
+<button 
+  id="btnHamburger"
+  type="button" 
+  class="nes-btn is-success hamburger"
+> + </button>
+
+<script>
+  import { showNavMobile } from '@scripts/showNavMobile'
+  
+  document.addEventListener('astro:page-load', showNavMobile);  
+</script>

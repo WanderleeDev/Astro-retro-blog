@@ -7,7 +7,7 @@ author: 'Wanderlee Max'
 image:
   url: 'https://www.dropbox.com/scl/fi/flhvilq79tkmpy98zd7pr/first-blog.webp?rlkey=vnssxpyhgwoqlnjlgckhlixyp&raw=1'
   alt: banner mi primer blog
-tags: ['blog retro']
+tags: ['blog']
 description: 'Revive la nostalgia de los juegos clásicos.'
 ---
 

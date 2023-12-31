@@ -1,9 +1,9 @@
 ---
 import type { IPostProps } from "../interfaces/IPost.interface";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 //  components
-import BlogCard from "../shared/BlogCard/BlogCard.astro";
-import HeaderBlog from "../shared/HeaderBlog/HeaderBlog.astro";
+import BlogCard from "@sharedComponents/BlogCard/BlogCard.astro";
+import HeaderBlog from "@sharedComponents/HeaderBlog/HeaderBlog.astro";
 
 const pageTitle = "Blog recientes";
 const postList = await Astro.glob<IPostProps>("../pages/posts/*.md");
