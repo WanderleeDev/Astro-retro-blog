@@ -11,15 +11,16 @@
   --gradient-color-1: rgba(0, 0, 0, 0.5);
   --gradient-color-2: rgba(0, 0, 0, 0.1);
   position: relative;
-  background: conic-gradient(from 135deg, #2C2A4B, #100F22);
+  background: conic-gradient(from 135deg, #2c2a4b, #100f22);
+  /* background-image: url("/public/food-banner.webm"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: calc(100dvh - 56px);
-  border-radius: .5rem;
+  height: calc(100dvh - 84px);
+  border-radius: 0.5rem;
 
   @media screen and (width <= 55rem) {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
   }
 }
 
@@ -27,16 +28,19 @@
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: .5rem;
-  background: linear-gradient(90deg, 
-    var(--gradient-color-1) 0%, 
-    var(--gradient-color-2, transparent) 20%, 
-    var(--gradient-color-2, transparent) 80%, 
+  border-radius: 0.5rem;
+  background: linear-gradient(
+    90deg,
+    var(--gradient-color-1) 0%,
+    var(--gradient-color-2, transparent) 20%,
+    var(--gradient-color-2, transparent) 80%,
     var(--gradient-color-1) 100%
   );
 }
 
 .sub-wrapper {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-flow: column wrap;
   height: 100%;
@@ -49,7 +53,7 @@
   max-width: 40rem;
   line-height: 2;
   text-wrap: balance;
-  font-size: clamp(1.2rem, 2vw , 1.8rem);
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
 }
 
 .description-strong {
@@ -57,46 +61,120 @@
   display: inline-block;
   margin-block: 1.5rem;
   padding-block: 1rem;
-  letter-spacing: .4rem;
-  font-size: clamp(1.2rem, 2vw , 1.8rem);
+  letter-spacing: 0.4rem;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
 }
 
 .description-letter {
-  --delay: 0ms; 
-  animation: toBlink 5s ease-in-out infinite var(--delay), flickerText .5s linear infinite;
+  --delay: 0ms;
+  animation:
+    toBlink 5s ease-in-out infinite var(--delay),
+    flickerText 0.5s linear infinite;
 
-  &:nth-child(4){
-    animation-play-state: paused;
-  }
-
-  &:nth-child(9){
-    animation-play-state: paused;
-  }
+    &:nth-child(1) {
+      --delay: 113ms;
+    }
+    &:nth-child(2) {
+      --delay: 139ms;
+    }
+    &:nth-child(3) {
+      --delay: 279ms;
+    }
+    &:nth-child(4) {
+      animation-play-state: paused;
+    }
+    &:nth-child(5) {
+      --delay: 335ms;
+    }
+    &:nth-child(6) {
+      --delay: 317ms;
+    }
+    &:nth-child(7) {
+      --delay: 84ms;
+    }
+    &:nth-child(8) {
+      --delay: 143ms;
+    }
+    &:nth-child(9) {
+      animation-play-state: paused;
+    }
+    &:nth-child(10) {
+      --delay: 281ms;
+    }
+    &:nth-child(11) {
+      --delay: 385ms;
+    }
+    &:nth-child(12) {
+      --delay: 211ms;
+    }
+    &:nth-child(13) {
+      --delay: 122ms;
+    }
 }
 
-
 @keyframes flickerText {
-  0%,50%,to {
-      text-shadow: .5px 1px 8px var(--clrVarDark),-.5px 1px 8px var(--clrVar),.5px -1px 8px var(--clrVarDark),-.5px -1px 8px var(--clrVarDark)
+  0%,
+  50%,
+  to {
+    text-shadow:
+      0.5px 1px 8px var(--clrVarDark),
+      -0.5px 1px 8px var(--clrVar),
+      0.5px -1px 8px var(--clrVarDark),
+      -0.5px -1px 8px var(--clrVarDark);
   }
 
-  10%,30%,80% {
-      text-shadow: .5px 1px 8px var(--clrVarDark),0px 0px 8px var(--clrVar),0px 0px 8px var(--clrVarDark),0px 0px 8px var(--clrVarDark)
+  10%,
+  30%,
+  80% {
+    text-shadow:
+      0.5px 1px 8px var(--clrVarDark),
+      0px 0px 8px var(--clrVar),
+      0px 0px 8px var(--clrVarDark),
+      0px 0px 8px var(--clrVarDark);
   }
 
-  20%,45%,90% {
-      text-shadow: .5px 1px 8px var(--clrVarDark),-.5px 1px 8px var(--clrVar),.5px -1px 8px var(--clrVarDark),-.5px -1px 8px var(--clrVarDark)
+  20%,
+  45%,
+  90% {
+    text-shadow:
+      0.5px 1px 8px var(--clrVarDark),
+      -0.5px 1px 8px var(--clrVar),
+      0.5px -1px 8px var(--clrVarDark),
+      -0.5px -1px 8px var(--clrVarDark);
   }
 }
 
 @keyframes toBlink {
-  0%    { opacity: 1;   }
-  3%    { opacity: 0.4; }
-  6%    { opacity: 1;   }
-  7%    { opacity: 0.4; }
-  8%    { opacity: 1;   }
-  9%    { opacity: 0.4; }
-  10%   { opacity: 1;   }
-  100%  { opacity: 1;   }
+  0% {
+    opacity: 1;
   }
+  3% {
+    opacity: 0.4;
+  }
+  6% {
+    opacity: 1;
+  }
+  7% {
+    opacity: 0.4;
+  }
+  8% {
+    opacity: 1;
+  }
+  9% {
+    opacity: 0.4;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
+.video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}

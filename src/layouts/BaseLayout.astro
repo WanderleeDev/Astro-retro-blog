@@ -1,8 +1,8 @@
 ---
 //  styles
-import "../../public/styles/reset.css";
+import "../styles/reset.css";
 import "nes.css/css/nes.min.css";
-import "../../public/styles/global.css";
+import "..//styles/global.css";
 
 //  components
 import Navigation from "@components/Navigation/Navigation.astro";
@@ -21,6 +21,7 @@ const { pageTitle } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content="Revive la nostalgia en nuestro blog retro: moda vintage, tecnología clásica y la magia de épocas pasadas. Explora con nosotros el encanto del pasado.">
+    <link rel="preconnect" href="https://www.dropbox.com">
     <title>{pageTitle}</title>
     <ViewTransitions />
   </head>
@@ -38,11 +39,48 @@ const { pageTitle } = Astro.props;
   </body>
 </html>
 
-<style>
-  .main-container {
+<style is:global>
+  @font-face {
+    font-family: "Press Start 2P";
+    src: url("/public/fonts/Press_Start_2P/PressStart2P-Regular.ttf") 
+        format("truetype");
+    font-display: fallback;
+  }
+  
+  body {
+    position: relative;
+    font-family: "Press Start 2P";
+    padding: 1rem;
+    display: grid;
+    grid:
+      "header" auto
+      "main" 1fr 
+      "footer" auto;
+    gap: 1rem;
+    background-color: #100f22;
+    color: white;
+    max-width: 87.5rem;
+    margin-inline: auto;
+  }
+
+  header {
+    grid-area:  "header";
+  }
+
+  main {
+    grid-area:  "main";
     min-height: 100dvh;
     display: flex;
     flex-flow: wrap column;
     gap: 2rem;
+  }
+
+  footer {
+    grid-area:  "footer";
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: clamp(1.2rem, 3vw ,2.5rem);
   }
 </style>

@@ -1,49 +1,25 @@
 ---
-import './PageIntroduction.css';
-import { banners } from '@data/banners.ts'
-import { generateRandomNumber } from '@scripts/generateRandomNumber.ts'
-
-const text = 'Perfect Pixel';
-const getBanner = () => banners[generateRandomNumber(banners.length)]
+import "./PageIntroduction.css";
+const text = "Perfect Pixel";
 ---
 
-<div class="wrapper" style={{
-  backgroundImage: `url(${getBanner()})`
-}}>
+<div id="banner" class="wrapper">
   <div class="sub-wrapper">
     <p class="description">
       Blogs, curiosidades, historia y mas sobre la cultura retro.
     </p>
     <strong class="description-strong">
-      {
-        text.split('').map(t => 
-          <span class="description-letter">{t}</span>
-        )
-      }
+      {text.split("").map((t) => <span class="description-letter">{t}</span>)}
     </strong>
   </div>
+  <video class="video" autoplay loop muted>
+    <source
+      src="https://www.dropbox.com/scl/fi/rzh6skwed4qe30qlerv8v/food-banner.webm?rlkey=66ai7tcltmoh4ic3s5x64kfb9&raw=1"
+      type="video/webm"
+    />
+    <source
+      src="https://www.dropbox.com/scl/fi/lg25mjxen5y14xnm3koyg/food-banner.mp4?rlkey=bgidk9kuwv2cojuzril8vv895&raw=1"
+      type="video/mp4"
+    />
+  </video>
 </div>
-
-<script>
-//  devuelve un número ramdon de 0 a 400 concatenado con ms
-const randomDelay = (): string => {
-  const delayInMilliseconds = Math.floor(Math.random() * 400);
-  return `${delayInMilliseconds}ms`;
-};
-
-//  agrega una variable css (--delay) a cada letra del nodeList
-const applyDelay = (): void => {
-  const letters: NodeListOf<HTMLSpanElement> = document.querySelectorAll('.description-letter') ?? [];
-
-  if (letters.length <= 0) return;
-
-  const listOfDelays = [...letters].map(randomDelay);
-
-  letters.forEach((letter, i) => {
-    if (letter.innerText === ' ') return;
-    letter.style.setProperty('--delay', listOfDelays[i]);
-  });
-}
-
-applyDelay();
-</script>

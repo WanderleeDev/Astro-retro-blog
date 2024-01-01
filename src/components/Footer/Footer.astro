@@ -2,10 +2,22 @@
 import "./Footer.css"
 
 const icons = [
-'github',
-'google',
-'gmail',
-'linkedin'
+  {
+    name: 'github',
+    link: 'https://github.com/WanderleeDev'
+  },
+  {
+    name: 'google',
+    link: 'https://github.com/WanderleeDev'
+  },
+  {
+    name: 'gmail',
+    link: 'https://www.linkedin.com/in/wanderlee-max/'
+  },
+  {
+    name: 'linkedin',
+    link: 'https://www.linkedin.com/in/wanderlee-max/'
+  }
 ]
 ---
 
@@ -17,8 +29,13 @@ const icons = [
     {
       icons.map(icon => (
         <li class="icon-item">
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <i class={`nes-icon ${icon} is-medium`}></i>
+          <a 
+            href={icon.link}
+            aria-label=`ir a ${icon.name}`
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <i class={`nes-icon ${icon.name} is-medium`}></i>
           </a>
         </li>
       ))
