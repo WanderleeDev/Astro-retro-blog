@@ -14,7 +14,7 @@ const { alt, color, description, image, title } = Astro.props;
 ---
 
 <header>
-  <h1 class="h1-styles" style={{ color: color }}>
+  <h1 style={{ color: color }}>
     {title}
   </h1>
 
@@ -41,26 +41,3 @@ const { alt, color, description, image, title } = Astro.props;
     </div>
   </div>
 </header>
-
-<style>
-  .shadow-image {
-    box-shadow: blue 0px 0px 0px 2px ;
-    object-fit: cover;
-  }
-
-  .shadow-image:hover {
-    transition: box-shadow linear .2s;
-    --bg-complementary: transparent;
-    box-shadow: 
-      blue 0px 0px 0px 2px , 
-      var(--bg-complementary) -10px 10px 0px 2px,
-      rgb(31, 193, 27) -10px 10px, 
-      var(--bg-complementary) -20px 20px 0px 2px, 
-      rgb(255, 217, 19) -20px 20px, 
-      var(--bg-complementary) -30px 30px 0px 2px, 
-      rgb(255, 156, 85) -30px 30px, 
-      var(--bg-complementary) -40px 40px 0px 2px, 
-      rgb(255, 85, 85) -40px 40px;
-      box-shadow: rgba(255, 255, 255, 0.16) 0px 3px 6px, rgba(255, 255, 255, 0.23) 0px 3px 6px;
-  }
-</style>

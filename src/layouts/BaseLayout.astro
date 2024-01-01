@@ -2,7 +2,7 @@
 //  styles
 import "../styles/reset.css";
 import "nes.css/css/nes.min.css";
-import "..//styles/global.css";
+import '@fontsource/press-start-2p';
 
 //  components
 import Navigation from "@components/Navigation/Navigation.astro";
@@ -40,16 +40,9 @@ const { pageTitle } = Astro.props;
 </html>
 
 <style is:global>
-  @font-face {
-    font-family: "Press Start 2P";
-    src: url("/public/fonts/Press_Start_2P/PressStart2P-Regular.ttf") 
-        format("truetype");
-    font-display: fallback;
-  }
-  
   body {
+    font-family: 'Press Start 2P', sans-serif;
     position: relative;
-    font-family: "Press Start 2P";
     padding: 1rem;
     display: grid;
     grid:
