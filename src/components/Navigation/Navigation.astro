@@ -3,10 +3,10 @@ import "./Navigation.css"
 import HamburgerBtn from "@sharedComponents/HamburgerBtn.astro"
 ---
 
-<header transition:animate="none">
-  <HamburgerBtn />
-  <nav class="nav" id="navbar">
-    <ul class="nav-link">
+<header class="headerPage">
+  <nav class="nav" id="navbar" transition:animate="none">
+    <HamburgerBtn />
+    <ul class="nav-list" transition:animate="none">
       <li>
         <a
           class="nes-btn is-warning" 

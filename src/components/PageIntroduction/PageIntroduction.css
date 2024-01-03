@@ -1,22 +1,13 @@
-:root {
-  --clrVarLight: #fee4fd;
-  --clrVar: #e829dbbc;
-  --clrVarDark: #c26fba;
-  --clrVarLight2: #dedff9;
-  --clrVar2: #292fe8bc;
-  --clrVarDark2: #6f72c2;
-}
-
 .wrapper {
   --gradient-color-1: rgba(0, 0, 0, 0.5);
   --gradient-color-2: rgba(0, 0, 0, 0.1);
+  --heightBanner: calc(100dvh - 6rem);
   position: relative;
   background: conic-gradient(from 135deg, #2c2a4b, #100f22);
-  /* background-image: url("/public/food-banner.webm"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: calc(100dvh - 84px);
+  height: var(--heightBanner, calc(100dvh - 96px));
   border-radius: 0.5rem;
 
   @media screen and (width <= 55rem) {
@@ -110,65 +101,6 @@
     &:nth-child(13) {
       --delay: 122ms;
     }
-}
-
-@keyframes flickerText {
-  0%,
-  50%,
-  to {
-    text-shadow:
-      0.5px 1px 8px var(--clrVarDark),
-      -0.5px 1px 8px var(--clrVar),
-      0.5px -1px 8px var(--clrVarDark),
-      -0.5px -1px 8px var(--clrVarDark);
-  }
-
-  10%,
-  30%,
-  80% {
-    text-shadow:
-      0.5px 1px 8px var(--clrVarDark),
-      0px 0px 8px var(--clrVar),
-      0px 0px 8px var(--clrVarDark),
-      0px 0px 8px var(--clrVarDark);
-  }
-
-  20%,
-  45%,
-  90% {
-    text-shadow:
-      0.5px 1px 8px var(--clrVarDark),
-      -0.5px 1px 8px var(--clrVar),
-      0.5px -1px 8px var(--clrVarDark),
-      -0.5px -1px 8px var(--clrVarDark);
-  }
-}
-
-@keyframes toBlink {
-  0% {
-    opacity: 1;
-  }
-  3% {
-    opacity: 0.4;
-  }
-  6% {
-    opacity: 1;
-  }
-  7% {
-    opacity: 0.4;
-  }
-  8% {
-    opacity: 1;
-  }
-  9% {
-    opacity: 0.4;
-  }
-  10% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 .video {

@@ -2,6 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import RetroWelcome from '@components/RetroWelcome/RetroWelcome.astro';
 import PageIntroduction from '@components/PageIntroduction/PageIntroduction.astro'
+import Marquee from "@sharedComponents/Marquee/Marquee.astro";
 
 const pageTitle = "Inicio"
 ---
@@ -9,6 +10,7 @@ const pageTitle = "Inicio"
 <BaseLayout pageTitle={pageTitle}>
 
   <PageIntroduction />
+  <Marquee />
   <RetroWelcome />
   
 </BaseLayout> 

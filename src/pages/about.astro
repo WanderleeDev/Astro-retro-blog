@@ -2,6 +2,9 @@
 import BaseLayout from "@layouts/BaseLayout.astro"
 import MyDescription from '@components/MyDescription/MyDescription.astro'
 import SimpleList from "@sharedComponents/SimpleList/SimpleList.astro";
+import AnimatedHeader from "@sharedComponents/AnimatedHeader/AnimatedHeader.astro";
+
+import { Image } from 'astro:assets'
 
 const pageTitle ="About me"
 const listLanguages = ['HTML','Css','JavaScript','TypeScript','Sass','TailwindCss','Angular','React']
@@ -9,7 +12,99 @@ const titleList = 'Algunas tecnologias que uso'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div 
+  <div class="about">
+
+    <h1 class="about-title">
+      Extras
+    </h1>
+
+    <div>
+
+      <figure class="avatar">
+        <section class="about-message message -right">
+          <div class="nes-balloon from-right">
+            <p>
+              Hola te saluda Wanderlee, progragramdor Frontend y espero este blog sea de tu agrado.
+            </p>
+          </div>
+        </section>
+  
+        <section class="about-message message -right">
+          <div class="nes-balloon from-right">
+            <p>
+              Hola te saluda Wanderlee, progragramdor Frontend y espero este blog sea de tu agrado.
+            </p>
+          </div>
+        </section>
+  
+        <section class="about-message message -right">
+          <div class="nes-balloon from-right">
+            <p>
+              Este blog esta diseñado con el fin de aprender el framework Astro.
+            </p>
+          </div>
+        </section>
+  
+        <section class="about-message message -right">
+          <div class="nes-balloon from-right">
+            <p>
+              Para los estilos me ayude de la libreria NES Css y probe  nuevas transiciones de CSS en base al Scroll.
+            </p>
+          </div>
+        </section>
+  
+        <section class="about-message message -right">
+          <div class="nes-balloon from-right">
+            <p class="lists">
+              <strong>
+                Agradeciemtos especiales:
+              </strong>
+              <ul class="nes-list is-disc links">
+                <li>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.youtube.com/watch?v=WW9SvuzdI2I&t=3068s"
+                  >
+                    Programción en Español - creando un blog con Astro y NES.css
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.youtube.com/watch?v=WW9SvuzdI2I&t=3068s"
+                  >
+                    MiduDev - animaciones con CSS y Scroll Animations
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.youtube.com/watch?v=UmzFk68Bwdk&t=735s"
+                  >
+                    Kevin Powell - Incredible scroll-based animations with CSS-only
+                  </a>
+                </li>
+              </ul>
+            </p>
+          </div>
+        </section>
+    </div>
+
+      <Image
+        class="avatar-img" 
+        src='https://www.dropbox.com/s/uyv3evu3sh28lw0/meme-gato-optimizado.jpg?raw=1'
+        width=200
+        height=200
+        alt='mi avatar'
+      />
+    </figure>
+
+  </div>
+
+  <!-- <div 
     style={{ 
       display: 'flex', 
       'flexDirection': 'column',
@@ -18,6 +113,49 @@ const titleList = 'Algunas tecnologias que uso'
   >
     <MyDescription />
     <SimpleList listContent={listLanguages} title={titleList}/>
-  </div>
-  
+  </div> -->
+
 </BaseLayout>
+<style>
+  .links {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1rem;
+  }
+
+  .about {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 7rem);
+    /* background-color: blueviolet; */
+    overflow-y: auto;
+  } 
+  .about-title {
+    padding: 1rem;
+    animation:
+    toBlink 5s ease-in-out infinite,
+    flickerText 0.5s linear infinite;
+  }
+  .about-message{
+    color: black;
+    max-width: 45ch;
+    line-height: 1.5;
+  }
+
+  .avatar {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    position: absolute;
+    justify-items: flex-end;
+    gap: 1rem;
+    bottom: 0;
+    right: 0;
+  }
+  
+  .avatar-img {
+    width: 13rem;
+    height: 13rem;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+  }
+</style>

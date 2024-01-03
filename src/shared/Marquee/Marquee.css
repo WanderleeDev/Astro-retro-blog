@@ -11,24 +11,37 @@
 }
 
 .marquee {
+  background-color: brown;
+  width: 100%;
   display: flex;
-  gap: 3rem;
-  overflow-x: hidden;
-  justify-content:center;
-  /* border: solid 2px red; */
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
+  overflow: hidden;
+  gap: 5rem;
 }
 
-.marquue-A {
+.marquee-icons {
+  flex: 1 0 100%;
+  animation: marquee 20s linear infinite;
+  margin-block: 1rem;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 5rem;
 }
 
-.marquee-B {
-
-}
 
 .marquee-img {
   transform: scale(.8);
   width: min-content;
   object-fit: contain;
   aspect-ratio: 1;
+}
+
+.marquee-sub {
+  display: flex;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-100%);
+  }
 }

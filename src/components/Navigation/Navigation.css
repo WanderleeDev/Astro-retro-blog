@@ -1,22 +1,42 @@
-.nav {
-  display: none;
-
-  @media screen and (width > 32rem) {
-    display: unset;
-  }
+.headerPage {
+  z-index: 10;
+  height: 4rem;
 }
 
-.nav-link {
-  display: flex;
-  flex-direction: row;
+.nav {
+  position: relative;
+}
+
+.nav-list {
+  position: absolute;
+  transform: translateY(120%);
+  display: none;
+  flex-flow: column wrap;
+  inset: auto auto 0 auto;
   gap: 1rem;
   text-transform:  uppercase;
-  @media screen and (width > 32rem) {
+  background-color: gray;
+  padding: 1rem 1.4rem 1rem 1rem;
+  border-radius: .5rem;
+
+  @media screen and (width > 45rem) {
+    position: static;
+    display: flex;
+    flex-flow: row nowrap;
     gap: 2rem;
+    transform: initial;
+    padding: initial;
+    background-color: initial;
+    & a {
+      width: initial;
+    }
   }
 }
 
 .expanded {
-  display: unset;
+  display: flex;
+  & a {
+    width: 100%;
+  }
 }
 

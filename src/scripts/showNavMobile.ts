@@ -1,6 +1,6 @@
 export function showNavMobile (): void {
   const btn = document.querySelector('#btnHamburger');
-  const navbar = document.querySelector('#navbar');
+  const navbar = document.querySelector('.nav-list');
 
   if (!btn || !navbar) return;
 
