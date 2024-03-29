@@ -1,9 +1,16 @@
 ---
 import "./PageIntroduction.css";
+import { getImage } from "astro:assets";
+import bgImage from "../../assets/food-banner.webp";
+
+const bgOptimized = await getImage({
+  src: bgImage,
+  format: "webp",
+});
 const text = "Perfect Pixel";
 ---
 
-<div id="banner" class="wrapper">
+<div id="banner" class="wrapper"  style={`background-image: url(${bgOptimized.src});`}>
   <div class="sub-wrapper">
     <p class="description">
       Blogs, curiosidades, historia y mas sobre la cultura retro.
@@ -12,8 +19,8 @@ const text = "Perfect Pixel";
       {text.split("").map((t) => <span class="description-letter">{t}</span>)}
     </strong>
   </div>
-  
-  <video class="video" autoplay loop muted>
+
+  <!-- <video class="video" autoplay loop muted>
     <source
       src="https://www.dropbox.com/scl/fi/rzh6skwed4qe30qlerv8v/food-banner.webm?rlkey=66ai7tcltmoh4ic3s5x64kfb9&raw=1"
       type="video/webm"
@@ -22,5 +29,5 @@ const text = "Perfect Pixel";
       src="https://www.dropbox.com/scl/fi/lg25mjxen5y14xnm3koyg/food-banner.mp4?rlkey=bgidk9kuwv2cojuzril8vv895&raw=1"
       type="video/mp4"
     />
-  </video>
+  </video> -->
 </div>
