@@ -2,7 +2,6 @@
 import "./BlogCard.css";
 import { Image } from "astro:assets";
 import IconsBar from "@sharedComponents/IconsBar/IconBar.astro";
-import { getImage } from "astro:assets";
 
 interface Props {
   image: string;
@@ -11,13 +10,7 @@ interface Props {
   url: string;
   color: string;
 }
-
 const { description, image, title, url, color } = Astro.props;
-const bgOptimized = await getImage({
-  src: image,
-  format: "webp",
-  inferSize: true
-});
 ---
 
 <a
@@ -31,10 +24,10 @@ const bgOptimized = await getImage({
   <div class="card-wrapper">
     <Image
       class="card-img"
-      src={bgOptimized.src}
+      src={image}
       width="150"
       height="150"
-      alt="portada de blog"
+      alt={`portada del blog ${title}`}
     />
   </div>
 
