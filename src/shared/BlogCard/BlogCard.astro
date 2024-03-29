@@ -2,6 +2,7 @@
 import "./BlogCard.css";
 import { Image } from "astro:assets";
 import IconsBar from "@sharedComponents/IconsBar/IconBar.astro";
+import { getImage } from "astro:assets";
 
 interface Props {
   image: string;
@@ -12,6 +13,11 @@ interface Props {
 }
 
 const { description, image, title, url, color } = Astro.props;
+const bgOptimized = await getImage({
+  src: image,
+  format: "webp",
+  inferSize: true
+});
 ---
 
 <a
