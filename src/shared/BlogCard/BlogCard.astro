@@ -10,7 +10,7 @@ interface Props {
   url: string;
   color: string;
 }
-const { description, image, title, url, color } = Astro.props;
+const { description, image, title, url } = Astro.props;
 ---
 
 <a
@@ -27,7 +27,7 @@ const { description, image, title, url, color } = Astro.props;
       src={image}
       width="150"
       height="150"
-      alt={`portada del blog ${title}`}
+      alt={`portada del blog: ${title}`}
     />
   </div>
 

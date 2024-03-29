@@ -11,7 +11,7 @@ const postList = await Astro.glob<IPostProps>("../pages/posts/*.md");
 <GridLayout pageTitle={pageTitle}>
   {
     postList.map((post) => (
-      <li>
+      <li >
         <BlogCard
           image={post.frontmatter.image.url}
           description={post.frontmatter.description}
